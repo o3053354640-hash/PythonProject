@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import avg, expr
+from pyspark.sql.functions import avg, expr  # 修正：导入expr函数
+from pyspark.sql.functions import percentile_approx  # 可选：直接导入percentile_approx
 
 # 创建SparkSession
 spark = SparkSession.builder.appName("AgeGroupAnalysis").getOrCreate()

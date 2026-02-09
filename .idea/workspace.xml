@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="19e41330-f7da-4e65-9b3a-1f85e2f87574" name="更改" comment="更新代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/数据科学/pyspark.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/数据科学/pyspark.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +238,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770196602541</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="更新代码">
+      <option name="closed" value="true" />
+      <created>1770203017025</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770203017025</updated>
+    </task>
+    <task id="LOCAL-00004" summary="更新代码">
+      <option name="closed" value="true" />
+      <created>1770518809172</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1770518809172</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,12 +361,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data/数据科学/pyspark.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data/数据科学/pyspark.py</url>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/data/数据科学/langchain案例.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
