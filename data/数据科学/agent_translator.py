@@ -1,70 +1,108 @@
+"""
+中文-英文翻译智能体 (LangChain + 通义千问)
+支持中→英、英→中双向翻译，API 密钥从环境变量读取。
+"""
 import os
+from typing import Literal
+
 from langchain_community.chat_models import ChatTongyi
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-MODEL_NAME = "qwen-turbo"
-DASHSCOPE_API_KEY = "sk-576bbbbd188340069daeed2ac9208640"  # 替换为你的真实密钥
+# 配置：优先从环境变量读取，避免密钥写死在代码中
+MODEL_NAME = os.environ.get("QWEN_MODEL", "qwen-turbo")
+DASHSCOPE_API_KEY = os.environ.get("DASHSCOPE_API_KEY", "").strip()
+
+# 翻译方向
+Direction = Literal["zh2en", "en2zh"]
+
+SYSTEM_PROMPTS = {
+    "zh2en": (
+        "你是一位专业的、精确的中文到英文翻译智能体。你的唯一任务是将用户提供的中文文本"
+        "完整、准确地翻译成自然流畅的英文。请严格遵守：只返回英文翻译结果，不要包含任何额外解释、注释或原文。"
+    ),
+    "en2zh": (
+        "你是一位专业的、精确的英文到中文翻译智能体。你的唯一任务是将用户提供的英文文本"
+        "完整、准确地翻译成自然流畅的中文。请严格遵守：只返回中文翻译结果，不要包含任何额外解释、注释或原文。"
+    ),
+}
 
 
-def create_translation_agent():
+def create_translation_agent(direction: Direction):
+    """根据翻译方向创建翻译链。"""
+    if not DASHSCOPE_API_KEY:
+        raise ValueError("未设置 DASHSCOPE_API_KEY，请在环境变量中配置。")
+
     llm = ChatTongyi(
         model=MODEL_NAME,
         temperature=0.1,
-        dashscope_api_key=DASHSCOPE_API_KEY
+        dashscope_api_key=DASHSCOPE_API_KEY,
     )
 
     translation_prompt = ChatPromptTemplate.from_messages([
-        (
-            "system",
-            "你是一位专业的、精确的中文到英文翻译智能体。你的唯一任务是将用户提供的中文文本"
-            "完整、准确地翻译成自然流畅的英文。请严格遵守：只返回英文翻译结果，不要包含任何额外解释、注释或原文。"
-        ),
+        ("system", SYSTEM_PROMPTS[direction]),
         ("user", "{text}"),
     ])
 
-    translation_chain = translation_prompt | llm | StrOutputParser()
-    return translation_chain
+    return translation_prompt | llm | StrOutputParser()
 
 
-def run_translator():
-    print("✨ 中文-英文翻译智能体 (基于 LangChain + Qwen) ✨")
+def run_translator() -> None:
+    """运行交互式翻译：先选择方向，再循环输入文本进行翻译。"""
+    print("✨ 翻译智能体 (LangChain + 通义千问) ✨")
     print("---------------------------------------------------------")
-    print(f"使用的模型: {MODEL_NAME}")
+    print(f"模型: {MODEL_NAME}")
 
-    if not DASHSCOPE_API_KEY or DASHSCOPE_API_KEY == "sk-your-real-api-key-here":
-        print("🚨 请在代码中设置有效的 DASHSCOPE_API_KEY！")
+    if not DASHSCOPE_API_KEY:
+        print("🚨 请设置环境变量 DASHSCOPE_API_KEY 后再运行。")
+        print("   示例 (PowerShell): $env:DASHSCOPE_API_KEY='你的密钥'")
         return
+
+    # 选择翻译方向
+    print("\n请选择翻译方向: [1] 中文→英文  [2] 英文→中文")
+    choice = input("输入 1 或 2 (默认 1): ").strip() or "1"
+    direction: Direction = "en2zh" if choice == "2" else "zh2en"
+    dir_label = "英文→中文" if direction == "en2zh" else "中文→英文"
 
     try:
-        translator_chain = create_translation_agent()
+        chain = create_translation_agent(direction)
     except Exception as e:
-        print(f"初始化模型失败: {e}")
+        print(f"初始化失败: {e}")
         return
+
+    print(f"\n已启用: {dir_label}。输入 'exit' 退出，'swap' 切换方向。\n")
 
     while True:
         try:
-            chinese_text = input("\n请输入要翻译的中文文本 (输入 'exit' 退出): \n&gt; ")
-            if chinese_text.lower() == 'exit':
-                print("程序退出。再见！")
+            prompt = f"\n请输入要翻译的文本 (exit 退出, swap 切换方向):\n> "
+            user_input = input(prompt).strip()
+
+            if user_input.lower() == "exit":
+                print("再见！")
                 break
-            if not chinese_text.strip():
+            if user_input.lower() == "swap":
+                direction = "en2zh" if direction == "zh2en" else "zh2en"
+                dir_label = "英文→中文" if direction == "en2zh" else "中文→英文"
+                chain = create_translation_agent(direction)
+                print(f"已切换为: {dir_label}")
+                continue
+            if not user_input:
                 continue
 
-            print("\n🤖 正在翻译...")
-            english_translation = translator_chain.invoke({"text": chinese_text})
-
-            print("\n✅ 英文翻译结果:")
+            print("\n🤖 翻译中...")
+            result = chain.invoke({"text": user_input})
+            print("\n✅ 翻译结果:")
             print("-----------------")
-            print(english_translation.strip())
+            print(result.strip())
             print("-----------------")
 
         except KeyboardInterrupt:
-            print("\n程序中断退出。再见！")
+            print("\n已中断，再见！")
             break
         except Exception as e:
-            print(f"\n运行时发生错误: {e}")
-            break
+            print(f"\n错误: {e}")
+            # 不因单次错误退出，允许继续输入
+            continue
 
 
 if __name__ == "__main__":
