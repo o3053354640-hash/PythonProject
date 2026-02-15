@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e41330-f7da-4e65-9b3a-1f85e2f87574" name="更改" comment="更新代码">
+    <list default="true" id="19e41330-f7da-4e65-9b3a-1f85e2f87574" name="更改" comment="代码优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/数据科学/agent_translator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/数据科学/agent_translator.py" afterDir="false" />
     </list>
@@ -49,77 +49,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.12.executor&quot;: &quot;Run&quot;,
-    &quot;Python.agent_translator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.langchain案例.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pyspark.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pyspark测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.冒泡算法.executor&quot;: &quot;Run&quot;,
-    &quot;Python.基数排序.executor&quot;: &quot;Run&quot;,
-    &quot;Python.模型训练.executor&quot;: &quot;Run&quot;,
-    &quot;Python.翻译智能体.executor&quot;: &quot;Run&quot;,
-    &quot;Python.调千问接口.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.mcpserver.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.12.executor": "Run",
+    "Python.agent_translator (2).executor": "Run",
+    "Python.agent_translator.executor": "Run",
+    "Python.langchain案例.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.pyspark.executor": "Run",
+    "Python.pyspark测试.executor": "Run",
+    "Python.冒泡算法.executor": "Run",
+    "Python.基数排序.executor": "Run",
+    "Python.模型训练.executor": "Run",
+    "Python.翻译智能体.executor": "Run",
+    "Python.调千问接口.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.mcpserver.settings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;hive&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "hive"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\QQQQQ\PycharmProjects\PythonProject\data\数据科学" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.12">
-    <configuration name="12" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/pdf生成" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/pdf生成/12.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.agent_translator">
     <configuration name="agent_translator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="DASHSCOPE_API_KEY" value="sk-576bbbbd188340069daeed2ac9208640" />
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
@@ -128,7 +106,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="C:\Users\QQQQQ\PycharmProjects\PythonProject\data\数据科学\agent_translator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/数据科学/agent_translator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -208,11 +186,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.agent_translator" />
+      <item itemvalue="Python.langchain案例" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.pyspark" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.agent_translator" />
         <item itemvalue="Python.langchain案例" />
         <item itemvalue="Python.pyspark" />
-        <item itemvalue="Python.12" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -307,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771138763667</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="代码优化">
+      <option name="closed" value="true" />
+      <created>1771139759174</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1771139759175</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +389,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="代码修改" />
     <MESSAGE value="更新代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新代码" />
+    <MESSAGE value="代码优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

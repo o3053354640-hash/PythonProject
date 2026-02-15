@@ -1,8 +1,15 @@
 """
 中文-英文翻译智能体 (LangChain + 通义千问)
 支持中→英、英→中双向翻译，API 密钥从环境变量读取。
+
+用法:
+  交互模式:  python agent_translator.py
+  传参翻译:  python agent_translator.py "要翻译的文本"
+             python agent_translator.py "Hello world" --direction en2zh
 """
+import argparse
 import os
+import sys
 from typing import Literal
 
 from langchain_community.chat_models import ChatTongyi
@@ -45,6 +52,15 @@ def create_translation_agent(direction: Direction):
     ])
 
     return translation_prompt | llm | StrOutputParser()
+
+
+def translate_once(text: str, direction: Direction) -> str:
+    """单次翻译：根据方向和文本返回翻译结果。"""
+    if not DASHSCOPE_API_KEY:
+        print("🚨 请设置环境变量 DASHSCOPE_API_KEY。", file=sys.stderr)
+        sys.exit(1)
+    chain = create_translation_agent(direction)
+    return chain.invoke({"text": text}).strip()
 
 
 def run_translator() -> None:
@@ -105,5 +121,43 @@ def run_translator() -> None:
             continue
 
 
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="中文-英文翻译智能体 (LangChain + 通义千问)",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+示例:
+  python agent_translator.py                     # 交互模式
+  python agent_translator.py "你好世界"           # 中文→英文
+  python agent_translator.py "Hello" -d en2zh    # 英文→中文
+        """,
+    )
+    parser.add_argument(
+        "text",
+        nargs="?",
+        default=None,
+        help="要翻译的文本（不传则进入交互模式）",
+    )
+    parser.add_argument(
+        "-d", "--direction",
+        choices=["zh2en", "en2zh"],
+        default="zh2en",
+        help="翻译方向: zh2en 中→英, en2zh 英→中 (默认 zh2en)",
+    )
+    args = parser.parse_args()
+
+    if args.text is not None:
+        # 传参模式：翻译一次并输出结果后退出
+        try:
+            result = translate_once(args.text, args.direction)
+            print(result)
+        except Exception as e:
+            print(f"翻译失败: {e}", file=sys.stderr)
+            sys.exit(1)
+    else:
+        # 未传参：交互模式
+        run_translator()
+
+
 if __name__ == "__main__":
-    run_translator()
+    main()
