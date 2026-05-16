@@ -57,7 +57,7 @@ def create_translation_agent(direction: Direction):
 def translate_once(text: str, direction: Direction) -> str:
     """单次翻译：根据方向和文本返回翻译结果。"""
     if not DASHSCOPE_API_KEY:
-        print("🚨 请设置环境变量 DASHSCOPE_API_KEY。", file=sys.stderr)
+        print("🚨 请设置环境变量 DASHSCOPE_API_KEY", file=sys.stderr)
         sys.exit(1)
     chain = create_translation_agent(direction)
     return chain.invoke({"text": text}).strip()

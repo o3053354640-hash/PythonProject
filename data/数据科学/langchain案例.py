@@ -8,12 +8,11 @@ chat = ChatTongyi(
     api_key=api_key,
     model="qwen-max",        # 可选: qwen-turbo, qwen-plus, qwen-max
     temperature=0.7,
-    streaming=False          # 设为 True 可启用流式输出
-
+    streaming=False)       # 设为 True 可启用流式输出
 messages = [
     SystemMessage(content="你是一个专业的 Python 教练。"),
     HumanMessage(content="如何用 Python 读取一个 JSON 文件？")
 ]
 # 调用模型
 response = chat.invoke(messages)
-print("🤖 回答：", response.content))
+print("🤖 回答：", response.content)
