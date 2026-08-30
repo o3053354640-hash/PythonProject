@@ -18,7 +18,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 # 配置：优先从环境变量读取，避免密钥写死在代码中
 MODEL_NAME = os.environ.get("QWEN_MODEL", "qwen-turbo")
-1 = os.environ.get("DASHSCOPE_API_KEY", "").strip()
+DASHSCOPE_API_KEY = os.environ.get("DASHSCOPE_API_KEY", "").strip()
 
 # 翻译方向
 Direction = Literal["zh2en", "en2zh"]
