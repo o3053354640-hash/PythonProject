@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19e41330-f7da-4e65-9b3a-1f85e2f87574" name="更改" comment="代码优化">
-      <change afterPath="$PROJECT_DIR$/data/数据科学/agent_conversation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/机器视觉/图片加载.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/数据科学/spark模型.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/数据科学/pyspark.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/数据科学/pyspark测试.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +28,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/data/pdf生成/12.py" root0="SKIP_INSPECTION" />
@@ -70,6 +68,7 @@
     &quot;Python.spark.executor&quot;: &quot;Run&quot;,
     &quot;Python.spark_simple_test.executor&quot;: &quot;Run&quot;,
     &quot;Python.spark_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.spark模型.executor&quot;: &quot;Run&quot;,
     &quot;Python.冒泡算法.executor&quot;: &quot;Run&quot;,
     &quot;Python.图片加载.executor&quot;: &quot;Run&quot;,
     &quot;Python.基数排序.executor&quot;: &quot;Run&quot;,
@@ -101,6 +100,36 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\QQQQQ\PycharmProjects\PythonProject\data\数据科学" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="spark模型" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/数据科学" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/数据科学/spark模型.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.spark模型" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -208,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771141486916</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="代码优化">
+      <option name="closed" value="true" />
+      <created>1774777883160</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1774777883160</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
