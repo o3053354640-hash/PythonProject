@@ -3,9 +3,12 @@ import os
 try:
     from langchain_community.chat_models import ChatTongyi
     from langchain_core.messages import HumanMessage, SystemMessage
-except ImportError:
-    from langchain.community.chat_models import ChatTongyi
-    from langchain.schema import HumanMessage, SystemMessage
+except ModuleNotFoundError as exc:
+    raise ModuleNotFoundError(
+        "未安装 LangChain 依赖。请先执行：\n"
+        "  pip install langchain langchain-community\n"
+        "如果你已安装过，请确认当前运行的是同一个 Python 环境。"
+    ) from exc
 
 # 优先读取环境变量，避免把真实密钥写死到代码里
 api_key = (
